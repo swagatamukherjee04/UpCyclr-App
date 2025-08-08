@@ -137,8 +137,8 @@ section {
 #upcycle-section,
 #features-section,
 #about-section {
-  padding-top: 80px;
-  margin-top: -80px;
+  padding-top: 0;
+  margin-top: 0;
   margin-bottom: 30px;
   position: relative;
 }
@@ -798,34 +798,34 @@ input[type="file"] {
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     padding: 15px;
     position: static; /* --- CHANGED: Remove sticky positioning --- */
   }
 
   .navbar-brand {
-      width: 100%;
+      width: auto;
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 0;
   }
 
   .navbar-nav {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+    width: auto;
     align-items: center;
     gap: 10px;
     margin-top: 0;
   }
 
   .nav-item {
-    width: 100%;
+    width: auto;
     text-align: center;
   }
 
   .nav-item .nav-link {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: auto;
     /* --- CRUCIAL CHANGE: Make buttons smaller --- */
     padding: 8px 15px; /* --- CHANGED: Reduced padding --- */
     font-size: 0.9em; /* --- CHANGED: Reduced font size --- */
@@ -834,7 +834,7 @@ input[type="file"] {
   }
 
   .nav-item .nav-link:hover {
-    background-color: #4a6078;
+    background-color: transparent;
   }
 
   .nav-item .nav-link::after {
@@ -860,8 +860,8 @@ input[type="file"] {
   #upcycle-section::before,
   #features-section::before,
   #about-section::before {
-      height: 120px;
-      margin-top: -120px;
+      padding-top: 0;
+      margin-top: 0;
   }
 
   section h2 {
