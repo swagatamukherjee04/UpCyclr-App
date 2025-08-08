@@ -62,45 +62,47 @@ function UpcyclePage() {
 
 // --- NEW function to fetch AI-generated ideas ---
 const fetchAIIdeas = async (objectName) => {
-  // Set processing state for UI feedback
-  setProcessingImage(true);
-  setIdentifiedObject(objectName);
-  setDisplayIdeas([]);
-  setAcceptedFeedback(false);
+    // --- CRUCIAL FIX: Use a conditional URL for local vs. deployed ---
+    const isLocalhost = window.location.hostname === 'localhost';
+    const backendUrl = isLocalhost ? 'http://localhost:3001' : ''; // Use localhost URL for local development, empty string for deployment
 
-  try {
-    const response = await fetch('/api/generate-ideas', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ objectName: objectName }),
-    });
+    setProcessingImage(true);
+    setIdentifiedObject(objectName);
+    setDisplayIdeas([]);
+    setAcceptedFeedback(false);
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+        const response = await fetch(`${backendUrl}/api/generate-ideas`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ objectName: objectName }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setDisplayIdeas(data);
+        console.log("AI-generated ideas received:", data);
+
+    } catch (error) {
+        console.error("Could not fetch ideas from backend:", error);
+        setDisplayIdeas([
+            {
+                title: "Failed to generate ideas.",
+                description: "An error occurred while connecting to the AI. Please check your internet connection or if the backend is running.",
+                steps: [],
+                links: []
+            }
+        ]);
+    } finally {
+        setProcessingImage(false);
     }
-
-    const data = await response.json();
-    // The AI generates an array of ideas. We just set it to our state directly.
-    setDisplayIdeas(data);
-    console.log("AI-generated ideas received:", data);
-
-  } catch (error) {
-    console.error("Could not fetch ideas from backend:", error);
-    // Show a fallback message if the AI call fails
-    setDisplayIdeas([
-      {
-        title: "Failed to generate ideas.",
-        description: "An error occurred while connecting to the AI. Please check your internet connection or try again later.",
-        steps: [],
-        links: []
-      }
-    ]);
-  } finally {
-    setProcessingImage(false);
-  }
 };
+
 
   // --- Update your `runObjectDetection` function to call the new fetchAIIdeas ---
   const runObjectDetection = async (imageSrcOrElement) => {
