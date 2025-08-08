@@ -69,7 +69,7 @@ const fetchAIIdeas = async (objectName) => {
   setAcceptedFeedback(false);
 
   try {
-    const response = await fetch('http://localhost:3001/api/generate-ideas', {
+    const response = await fetch('/api/generate-ideas', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
