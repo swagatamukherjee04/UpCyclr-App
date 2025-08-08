@@ -60,6 +60,10 @@ app.post('/api/generate-ideas', async (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Upcyclr Backend listening at http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Upcyclr Backend listening at http://localhost:${port}`);
+  });
+}
+
+module.exports = app;
