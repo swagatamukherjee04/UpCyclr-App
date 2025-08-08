@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Upcyclr
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Give new life to old things with AI-powered ideas.**
 
-## Available Scripts
+Upcyclr is a web application designed to inspire creative reuse and promote sustainability. By leveraging modern AI and client-side technologies, it helps users find innovative ways to upcycle everyday items, turning waste into valuable and beautiful objects.
 
-In the project directory, you can run:
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
-### `npm start`
+## Features
+- **Input Flexibility:** Users can provide an object by capturing a photo with their webcam, uploading an image file, or simply typing its name.
+- **AI-Powered Identification:** The frontend uses client-side machine learning with TensorFlow.js to intelligently identify objects from images in real-time.
+- **AI-Powered Idea Generation:** A Node.js backend connects to the Gemini AI API to generate dynamic and creative upcycling ideas for any identified object.
+- **Human-in-the-Loop Refinement:** Users can correct AI misidentifications, demonstrating a practical approach to refining AI systems.
+- **User Contributions:** Users can contribute their own unique upcycling ideas, which are saved locally, fostering a sense of community.
+- **User-Friendly UI:** The application features a clean, intuitive, and responsive design for a seamless user experience across all devices.
+- **Dynamic Content:** Ideas are presented with titles, descriptions, steps, and external links for easy implementation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Frontend:**
+- **React:** A JavaScript library for building user interfaces.
+- **HTML5 Media Devices:** For accessing the user's webcam.
+- **React Router:** For multi-page routing within the application.
+- **CSS:** For styling and responsive design.
 
-### `npm test`
+**Backend (AI API Gateway):**
+- **Node.js & Express.js:** To create a lightweight, robust API server.
+- **`@google/generative-ai`:** The official library for connecting to the Gemini AI API.
+- **`dotenv`:** For securely managing the AI API key.
+- **`cors`:** To enable communication between the frontend and backend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Machine Learning:**
+- **TensorFlow.js:** For client-side object identification from images.
+- **`@tensorflow-models/coco-ssd`:** A pre-trained model for real-time object detection.
 
-### `npm run build`
+**Tools & Deployment:**
+- **Git & GitHub:** For version control and code hosting.
+- **Vercel:** For seamless, serverless deployment of both the frontend and backend.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- [Node.js](https://nodejs.org/en/) (v18 or higher)
+- `npm` (comes with Node.js)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/your-username/Upcyclr-App.git](https://github.com/your-username/Upcyclr-App.git)
+cd Upcyclr-App
