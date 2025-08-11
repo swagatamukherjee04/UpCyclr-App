@@ -52,5 +52,11 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/Upcyclr-App.git](https://github.com/your-username/Upcyclr-App.git)
+git clone [https://github.com/swagatamukherjee04/Upcyclr-App.git](https://github.com/swagatamukherjee04/Upcyclr-App.git)
 cd Upcyclr-App
+
+
+
+
+
+
